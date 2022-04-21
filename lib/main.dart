@@ -1,16 +1,16 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: _title,
+      title: "Eventor",
       home: Eventor(),
     );
   }
@@ -25,24 +25,25 @@ class Eventor extends StatefulWidget {
 
 class _EventorState extends State<Eventor> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  final Widget _myGoogleMap = GoogleMapScreen();
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetTitle = <Widget>[
     Text(
-      'Тут должна быть карта',
-      style: optionStyle,
+      'Главная',
+      style: TextStyle(
+          color: Colors.amber, fontSize: 40, fontWeight: FontWeight.bold),
     ),
     Text(
-      'Сюда сделать добавление маркера',
-      style: optionStyle,
+      'Создание маркера',
+      style: TextStyle(
+          color: Colors.amber, fontSize: 40, fontWeight: FontWeight.bold),
     ),
     Text(
-      'Тут профиль юзера',
-      style: optionStyle,
+      'Профиль',
+      style: TextStyle(
+          color: Colors.amber, fontSize: 40, fontWeight: FontWeight.bold),
     ),
   ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -53,15 +54,9 @@ class _EventorState extends State<Eventor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Eventor',
-          style: TextStyle(
-              color: Colors.amber, fontSize: 40, fontWeight: FontWeight.bold),
-        ),
+        title: _widgetTitle.elementAt(_selectedIndex),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body: getBody(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -78,8 +73,38 @@ class _EventorState extends State<Eventor> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color.fromARGB(255, 3, 204, 30),
+        selectedItemColor: const Color.fromARGB(255, 3, 204, 30),
         onTap: _onItemTapped,
+      ),
+    );
+  }
+
+  Widget getBody() {
+    if (_selectedIndex == 0) {
+      return _myGoogleMap;
+    } else {
+      return _myGoogleMap;
+    }
+  }
+}
+
+class GoogleMapScreen extends StatefulWidget {
+  const GoogleMapScreen({Key? key}) : super(key: key);
+
+  @override
+  State<GoogleMapScreen> createState() => _GoogleMapScreenState();
+}
+
+class _GoogleMapScreenState extends State<GoogleMapScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: GoogleMap(
+        mapType: MapType.normal,
+        initialCameraPosition: CameraPosition(
+          target: LatLng(45.039859, 38.975166),
+          zoom: 15,
+        ),
       ),
     );
   }
