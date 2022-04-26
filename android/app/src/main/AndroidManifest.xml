@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eventor_one">
+    package="com.example.eventor_two">
    <application
-        android:label="eventor_one"
+        android:label="eventor_two"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
@@ -31,7 +31,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-                     <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAeK7ll7BfhFKNf0VivngiaZPzIDmnCdasE"/>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAeK7ll7BfhFKNf0VivngiaZPzIDmnCdas"/>
     </application>
 </manifest>

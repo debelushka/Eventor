@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(eventor_one LANGUAGES CXX)
+project(eventor_two LANGUAGES CXX)
 
-set(BINARY_NAME "eventor_one")
+set(BINARY_NAME "eventor_two")
 
 cmake_policy(SET CMP0063 NEW)
 

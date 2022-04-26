@@ -1,6 +1,6 @@
 {
-    "name": "eventor_one",
-    "short_name": "eventor_one",
+    "name": "eventor_two",
+    "short_name": "eventor_two",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
