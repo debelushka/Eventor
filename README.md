@@ -1,6 +1,6 @@
 # eventor_two
 
-A new Flutter project.
+Applications for creating and searching for events in your city.
 
 ## Getting Started
 
