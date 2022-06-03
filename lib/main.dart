@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import 'Screens/Welcome/welcome_screen.dart';
 import 'constants.dart';
+import 'package:intl/date_symbol_data_file.dart';
+import 'package:intl/intl.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Eventor Auth",
       theme: ThemeData(
           primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white),
@@ -19,5 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

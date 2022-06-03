@@ -23,12 +23,18 @@ class Body extends StatelessWidget {
             ),
             const Text(
               "WELCOME TO EVENTOR",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: kPrimaryColor),
             ),
-            SvgPicture.asset(
-              "assets/images/chat.svg",
-              height: size.height * 0.45,
+            SizedBox(
+              height: size.height * 0.09,
             ),
+            // SvgPicture.asset(
+            //   "assets/images/Party.svg",
+            //   height: size.height * 0.31,
+            // ),
             SizedBox(
               height: size.height * 0.05,
             ),
