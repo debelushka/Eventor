@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/Welcome/welcome_screen.dart';
 import 'constants.dart';
-import 'package:intl/date_symbol_data_file.dart';
-import 'package:intl/intl.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
